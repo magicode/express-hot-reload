@@ -1,0 +1,16 @@
+{
+  "name": "express-hot-reload",
+  "description": "express.js example, auto hot reload without losing session and without losing connections ",
+  "main": "./run",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/magicode/express-hot-reload.git"
+  },
+  "version": "0.0.1",
+  "author": "magicode",
+  "keywords": [],
+  "dependencies": {
+    "express": "~3.4.0",
+    "watch": "~0.8.0"
+  }
+}
