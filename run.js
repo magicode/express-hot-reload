@@ -27,18 +27,23 @@ function loadApp(){
     
 loadApp();
  
+var willReload = false;
+
 watch.watchTree( __dirname ,  
 		{ filter: function(f,stats){ return !(/(.js|.json)$/).test(f) && stats.isFile(); } }  , 
 		function (f, curr, prev) {
-			if (typeof f == "object" && prev === null && curr === null) { } 
-			else {
-			    if(f == __filename) return console.error("can't reload %s" , f);
-				clearCache();
-				loadApp();
-				console.log("reload app");
+			if (typeof f == "object" && prev === null && curr === null) { } else {
+				
+				if(willReload) return; willReload = true;
+				setTimeout(function(){
+					willReload = false;
+					clearCache();
+					loadApp();
+					console.log("reload app");
+				},1000);
+				
 			}
 });
-
 
 http.createServer(function(){ 
     obj.app.apply(null, arguments); 

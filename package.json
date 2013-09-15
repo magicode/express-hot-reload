@@ -1,6 +1,6 @@
 {
   "name": "express-hot-reload",
-  "description": "express.js example, auto hot reload without losing session and without losing connections ",
+  "description": "express.js example, auto hot reload without losing sessions and without losing connections ",
   "main": "./run",
   "repository": {
     "type": "git",
